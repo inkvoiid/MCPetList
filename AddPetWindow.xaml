@@ -1,0 +1,19 @@
+﻿<Window x:Class="MCPetList.AddPetWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MCPetList"
+        mc:Ignorable="d"
+        Title="AddPetWindow" Height="450" Width="800">
+    <StackPanel>
+        <Label Content="Add a pet" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" />
+        <ListView x:Name="PetSelectionList">
+            <StackPanel>
+                <Image Width="100" Height="100" Source="https://static.wikia.nocookie.net/minecraft_gamepedia/images/d/d8/Allay_JE1_BE1.gif"/>
+                <TextBlock VerticalAlignment="Bottom" Text="Allay" TextAlignment="Center"/>
+            </StackPanel>
+        </ListView>
+
+    </StackPanel>
+</Window>

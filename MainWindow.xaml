@@ -1,0 +1,22 @@
+﻿<Window x:Name="WindowMain" x:Class="MCPetList.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MCPetList"
+        mc:Ignorable="d"
+        Title="MCPetList" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <ScrollViewer Margin="0,30,0,0">
+            <StackPanel x:Name="MainPanel">
+            </StackPanel>
+        </ScrollViewer>
+        <ToolBar Height="30" VerticalAlignment="Top">
+            <Button x:Name="ButtonSave" Content="💾 Save" HorizontalAlignment="Left" VerticalAlignment="Center" ToolTip="Save"/>
+            <Button x:Name="ButtonReload" Content="🔄 Reload" HorizontalAlignment="Left" VerticalAlignment="Center" ToolTip="Reload" Click="ButtonReload_Click"/>
+            <Button x:Name="ButtonAddPlayer" Content="➕ Add Player" HorizontalAlignment="Left" VerticalAlignment="Center" ToolTip="Add Player" Click="ButtonAddPlayer_Click" />
+            <Button x:Name="ButtonAddPet" Content="➕ Add Pet" HorizontalAlignment="Left" VerticalAlignment="Center" ToolTip="Add Pet" Click="ButtonAddPet_Click" />
+        </ToolBar>
+
+    </Grid>
+</Window>

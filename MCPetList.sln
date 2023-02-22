@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCPetList", "MCPetList.csproj", "{178DC9A4-8F35-4CDC-8DA3-90B93C0A8353}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{178DC9A4-8F35-4CDC-8DA3-90B93C0A8353}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{178DC9A4-8F35-4CDC-8DA3-90B93C0A8353}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{178DC9A4-8F35-4CDC-8DA3-90B93C0A8353}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{178DC9A4-8F35-4CDC-8DA3-90B93C0A8353}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5E6EA142-CF15-44F4-A45D-CE68B1570716}
+	EndGlobalSection
+EndGlobal
