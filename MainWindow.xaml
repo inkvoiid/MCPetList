@@ -5,17 +5,59 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MCPetList"
         mc:Ignorable="d"
-        Title="MCPetList" Height="450" Width="800" Loaded="Window_Loaded">
+        Title="MCPetList" Height="450" Width="800" Loaded="Window_Loaded"  Style="{StaticResource MCPetListStyle}" Background="#C6C6C6">
     <Grid>
         <ScrollViewer Margin="0,30,0,0">
             <StackPanel x:Name="MainPanel">
             </StackPanel>
         </ScrollViewer>
-        <ToolBar Height="30" VerticalAlignment="Top">
-            <Button x:Name="ButtonSave" Content="💾 Save" HorizontalAlignment="Left" VerticalAlignment="Center" ToolTip="Save"/>
-            <Button x:Name="ButtonReload" Content="🔄 Reload" HorizontalAlignment="Left" VerticalAlignment="Center" ToolTip="Reload" Click="ButtonReload_Click"/>
-            <Button x:Name="ButtonAddPlayer" Content="➕ Add Player" HorizontalAlignment="Left" VerticalAlignment="Center" ToolTip="Add Player" Click="ButtonAddPlayer_Click" />
-            <Button x:Name="ButtonAddPet" Content="➕ Add Pet" HorizontalAlignment="Left" VerticalAlignment="Center" ToolTip="Add Pet" Click="ButtonAddPet_Click" />
+        <ToolBar Height="30" VerticalAlignment="Top" ToolBarTray.IsLocked="True" Background="#9E9E9E">
+            <ToolBar.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="Foreground" Value="#FCFCFC" />
+                    <Setter Property="HorizontalAlignment" Value="Left" />
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                </Style>
+            </ToolBar.Resources>
+            <Button x:Name="ButtonSave" ToolTip="Save">
+                <Button.Content>
+                    <TextBlock Text="💾 Save" FontSize="17">
+                        <TextBlock.Effect>
+                            <DropShadowEffect ShadowDepth="2.5" BlurRadius="0" Color="#3E3E3E"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+                </Button.Content>
+            </Button>
+
+            <Button x:Name="ButtonReload" ToolTip="Reload" Click="ButtonReload_Click">
+                <Button.Content>
+                    <TextBlock Text="🔄 Reload" FontSize="17">
+                        <TextBlock.Effect>
+                            <DropShadowEffect ShadowDepth="2.5" BlurRadius="0" Color="#3E3E3E"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+                </Button.Content>
+            </Button>
+
+            <Button x:Name="ButtonAddPlayer" ToolTip="Add Player" Click="ButtonAddPlayer_Click">
+                <Button.Content>
+                    <TextBlock Text="➕ Add Player" FontSize="17">
+                        <TextBlock.Effect>
+                            <DropShadowEffect ShadowDepth="2.5" BlurRadius="0" Color="#3E3E3E"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+                </Button.Content>
+            </Button>
+
+            <Button x:Name="ButtonAddPet" ToolTip="Add Pet" Click="ButtonAddPet_Click">
+                <Button.Content>
+                    <TextBlock Text="➕ Add Pet" FontSize="17">
+                        <TextBlock.Effect>
+                            <DropShadowEffect ShadowDepth="2.5" BlurRadius="0" Color="#3E3E3E"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+                </Button.Content>
+            </Button>
         </ToolBar>
 
     </Grid>

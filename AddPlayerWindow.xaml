@@ -5,23 +5,43 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MCPetList"
         mc:Ignorable="d"
-        Title="Add a Player" ResizeMode="NoResize">
+        Title="Add a Player" ResizeMode="NoResize" Style="{StaticResource MCPetListStyle}">
     <StackPanel>
         <StackPanel Margin="10">
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                 <Label Content="Enter a Minecraft Java Username:" VerticalAlignment="Center" />
                 <TextBox x:Name="TextBoxSearch" Text="inkvoiid" Width="150" VerticalAlignment="Center" GotFocus="TextBoxSearch_GotFocus" />
 
-                <Button x:Name="ButtonSearch" Content="Search" Margin="5" Width="55" VerticalAlignment="Center" Click="ButtonSearch_Click" IsDefault="True" />
+                <Button x:Name="ButtonSearch" Margin="5" Width="100" VerticalAlignment="Center" Click="ButtonSearch_Click" IsDefault="True" Style="{StaticResource MCButtonStyle}">
+                    <Button.Content>
+                        <TextBlock Text="Search" Foreground="White" FontSize="17">
+                            <TextBlock.Effect>
+                                <DropShadowEffect ShadowDepth="2" BlurRadius="0" Color="Green"/>
+                            </TextBlock.Effect>
+                        </TextBlock>
+                    </Button.Content>
+                </Button>
             </StackPanel>
             <Label x:Name="LabelNameplate" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Background="#72000000" Foreground="White" Visibility="Hidden"/>
             <Image x:Name="ImageSkinDisplay" HorizontalAlignment="Center" VerticalAlignment="Top" Height="169"/>
         </StackPanel>
 
         <StackPanel VerticalAlignment="Bottom" Background="#FFECECEC">
-            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Height="29">
-                <Button x:Name="ButtonCancel" Content="Cancel" Margin="5" Width="75" IsCancel="True" />
-                <Button x:Name="ButtonAdd" Content="Add" Margin="5" Width="75" Click="ButtonAdd_Click" />
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                <Button x:Name="ButtonCancel" Content="Cancel" Margin="5" Width="75" IsCancel="True" >
+                    <Button.BorderBrush>
+                        <ImageBrush/>
+                    </Button.BorderBrush>
+                </Button>
+                <Button x:Name="ButtonAdd" Margin="5" Width="75" Click="ButtonAdd_Click" Style="{StaticResource MCButtonStyle}">
+                    <Button.Content>
+                        <TextBlock Text="Add" Foreground="White" FontSize="17">
+                            <TextBlock.Effect>
+                                <DropShadowEffect ShadowDepth="2" BlurRadius="0" Color="Green"/>
+                            </TextBlock.Effect>
+                        </TextBlock>
+                    </Button.Content>
+                </Button>
             </StackPanel>
         </StackPanel>
 

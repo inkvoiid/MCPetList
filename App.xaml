@@ -4,6 +4,16 @@
              xmlns:local="clr-namespace:MCPetList"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style x:Key="MCPetListStyle" TargetType="{x:Type Control}">
+            <Setter Property="FontSize" Value="17"/>
+            <Setter Property="FontFamily" Value="resources/#Minecraft Seven" />
+            <Setter Property="FontStyle" Value="Normal" />
+        </Style>
+        <Style x:Key="MCButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#178C4A"/>
+            <Setter Property="BorderBrush" Value="DarkGreen"></Setter>
+            <Setter Property="BorderThickness" Value="2"></Setter>
+            <Setter Property="Margin" Value="2"></Setter>
+        </Style>
     </Application.Resources>
 </Application>

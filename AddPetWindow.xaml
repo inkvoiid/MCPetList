@@ -5,13 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MCPetList"
         mc:Ignorable="d"
-        Title="AddPetWindow" Height="450" Width="800">
+        Title="Add a Pet" ResizeMode="NoResize" Height="450" Width="800" Style="{StaticResource MCPetListStyle}">
     <StackPanel>
-        <Label Content="Add a pet" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" />
         <ListView x:Name="PetSelectionList">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel></WrapPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
             <StackPanel>
                 <Image Width="100" Height="100" Source="https://static.wikia.nocookie.net/minecraft_gamepedia/images/d/d8/Allay_JE1_BE1.gif"/>
                 <TextBlock VerticalAlignment="Bottom" Text="Allay" TextAlignment="Center"/>
+            </StackPanel>
+
+            <StackPanel>
+                <Image Width="100" Height="100" Source="https://static.wikia.nocookie.net/minecraft_gamepedia/images/d/d8/Red_Cat.png"/>
+                <TextBlock VerticalAlignment="Bottom" Text="Cat" TextAlignment="Center"/>
             </StackPanel>
         </ListView>
 

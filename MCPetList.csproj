@@ -8,8 +8,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="resources\GoghExtraBold.ttf" />
+    <None Remove="resources\Milky Honey.ttf" />
+    <None Remove="resources\Minecraft Seven.otf" />
+    <None Remove="resources\Minecraft Ten.otf" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="resources\defaultavatar.png" />
     <Resource Include="resources\defaultskin.png" />
+    <Resource Include="resources\GoghExtraBold.ttf" />
+    <Resource Include="resources\Minecraft Seven.otf" />
+    <Resource Include="resources\Minecraft Ten.otf" />
   </ItemGroup>
 
 </Project>
