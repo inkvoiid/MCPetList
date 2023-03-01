@@ -9,11 +9,59 @@
             <Setter Property="FontFamily" Value="resources/#Minecraft Seven" />
             <Setter Property="FontStyle" Value="Normal" />
         </Style>
+
         <Style x:Key="MCButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="FontFamily" Value="resources/#Minecraft Ten" />
             <Setter Property="Background" Value="#178C4A"/>
-            <Setter Property="BorderBrush" Value="DarkGreen"></Setter>
+            <Setter Property="BorderBrush" Value="DarkGreen"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Margin" Value="2"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#1ba277"/>
+                    <Setter Property="BorderBrush" Value="DarkGreen"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="MCButtonTextStyle" TargetType="TextBlock">
+            <Setter Property="RenderOptions.BitmapScalingMode" Value="NearestNeighbor"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect ShadowDepth="2.5" BlurRadius="0" Color="Green"/>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="True">
+                    <Setter Property="Foreground" Value="White"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="MCTextStyle" TargetType="{x:Type TextBlock}">
+            <Setter Property="RenderOptions.BitmapScalingMode" Value="NearestNeighbor"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect ShadowDepth="2.5" BlurRadius="0" Color="#3E3E3E"/>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="True">
+                    <Setter Property="Foreground" Value="White"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="MCTextboxStyle" TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="#A09172"></Setter>
+            <Setter Property="Foreground" Value="White"/>
             <Setter Property="BorderThickness" Value="2"></Setter>
-            <Setter Property="Margin" Value="2"></Setter>
+            <Setter Property="BorderBrush" Value="#3C392A"></Setter>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect ShadowDepth="2.5" BlurRadius="0" Color="White"/>
+                </Setter.Value>
+            </Setter>
         </Style>
     </Application.Resources>
 </Application>

@@ -21,41 +21,25 @@
             </ToolBar.Resources>
             <Button x:Name="ButtonSave" ToolTip="Save">
                 <Button.Content>
-                    <TextBlock Text="💾 Save" FontSize="17">
-                        <TextBlock.Effect>
-                            <DropShadowEffect ShadowDepth="2.5" BlurRadius="0" Color="#3E3E3E"/>
-                        </TextBlock.Effect>
-                    </TextBlock>
+                    <TextBlock Text="💾 Save" Style="{StaticResource MCTextStyle}"/>
                 </Button.Content>
             </Button>
 
             <Button x:Name="ButtonReload" ToolTip="Reload" Click="ButtonReload_Click">
                 <Button.Content>
-                    <TextBlock Text="🔄 Reload" FontSize="17">
-                        <TextBlock.Effect>
-                            <DropShadowEffect ShadowDepth="2.5" BlurRadius="0" Color="#3E3E3E"/>
-                        </TextBlock.Effect>
-                    </TextBlock>
+                    <TextBlock Text="🔄 Reload" Style="{StaticResource MCTextStyle}"/>
                 </Button.Content>
             </Button>
 
             <Button x:Name="ButtonAddPlayer" ToolTip="Add Player" Click="ButtonAddPlayer_Click">
                 <Button.Content>
-                    <TextBlock Text="➕ Add Player" FontSize="17">
-                        <TextBlock.Effect>
-                            <DropShadowEffect ShadowDepth="2.5" BlurRadius="0" Color="#3E3E3E"/>
-                        </TextBlock.Effect>
-                    </TextBlock>
+                    <TextBlock Text="➕ Add Player" Style="{StaticResource MCTextStyle}"/>
                 </Button.Content>
             </Button>
 
             <Button x:Name="ButtonAddPet" ToolTip="Add Pet" Click="ButtonAddPet_Click">
                 <Button.Content>
-                    <TextBlock Text="➕ Add Pet" FontSize="17">
-                        <TextBlock.Effect>
-                            <DropShadowEffect ShadowDepth="2.5" BlurRadius="0" Color="#3E3E3E"/>
-                        </TextBlock.Effect>
-                    </TextBlock>
+                    <TextBlock Text="➕ Add Pet" Style="{StaticResource MCTextStyle}"/>
                 </Button.Content>
             </Button>
         </ToolBar>

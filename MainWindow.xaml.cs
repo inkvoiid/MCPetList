@@ -51,23 +51,29 @@ namespace MCPetList
             MainPanel.Children.Clear();
             foreach (var player in players)
             {
-                Expander userExpander = new Expander();
-                StackPanel userExpanderHeader = new StackPanel();
-                Image playerHead = new Image();
-                TextBlock headerText = new TextBlock();
-
-                // Make the image and name appear side by side
-                userExpanderHeader.Orientation = Orientation.Horizontal;
-                playerHead.Source = player.Value == "" ? new BitmapImage(new Uri(@"resources\defaultavatar.png", UriKind.Relative)) : await GetAvatar(player.Key);
-                playerHead.Height = 25;
-                headerText.Text = player.Key;
-                headerText.VerticalAlignment = VerticalAlignment.Center;
-                headerText.Margin = new Thickness(5);
-
-                userExpanderHeader.Children.Add(playerHead);
-                userExpanderHeader.Children.Add(headerText);
-
-                userExpander.Header = userExpanderHeader;
+                Image playerHead = new Image
+                {
+                    Source = player.Value == "" ? new BitmapImage(new Uri(@"resources\defaultavatar.png", UriKind.Relative)) : await GetAvatar(player.Key),
+                    Height = 25
+                };
+                TextBlock headerText = new TextBlock
+                {
+                    Text = player.Key,
+                    Foreground = new SolidColorBrush(Colors.White),
+                    VerticalAlignment = VerticalAlignment.Center,
+                    Margin = new Thickness(5)
+                };
+                StackPanel userExpanderHeader = new StackPanel
+                {
+                    Orientation = Orientation.Horizontal,
+                    Children = { playerHead, headerText }
+                };
+                Expander userExpander = new Expander
+                {
+                    Background = new SolidColorBrush(Color.FromArgb(255, 158, 158, 158)),
+                    Header = userExpanderHeader
+                };
+                
                 MainPanel.Children.Add(userExpander);
             }
         }
@@ -100,33 +106,44 @@ namespace MCPetList
 
                 var webPath = $"https://crafatar.com/avatars/{uuid}?default=MHF_Steve/MHF_Alex&overlay";
 
-                Directory.CreateDirectory(Path.GetDirectoryName(localPath));
-
-                using (HttpClient client = new HttpClient())
+                if(Path.GetDirectoryName(localPath) != String.Empty)
                 {
-                    byte[] imageBytes = await client.GetByteArrayAsync(webPath);
-                    File.WriteAllBytes(localPath, imageBytes);
+                    Directory.CreateDirectory(Path.GetDirectoryName(localPath));
+
+                    using (HttpClient client = new HttpClient())
+                    {
+                        byte[] imageBytes = await client.GetByteArrayAsync(webPath);
+                        File.WriteAllBytes(localPath, imageBytes);
+                    }
+                    return new BitmapImage(new Uri(webPath));
                 }
-                return new BitmapImage(new Uri(webPath));
+                else
+                {
+                    return new BitmapImage(new Uri(@"resources\defaultavatar.png", UriKind.Relative));
+                }
             }
         }
 
         private void ButtonAddPlayer_Click(object sender, RoutedEventArgs e)
         {
-            AddPlayerWindow addPlayerWindow = new AddPlayerWindow(this);
-            addPlayerWindow.Owner = WindowMain;
-            addPlayerWindow.SizeToContent = SizeToContent.WidthAndHeight;
-            addPlayerWindow.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            AddPlayerWindow addPlayerWindow = new AddPlayerWindow(this)
+            {
+                Owner = WindowMain,
+                SizeToContent = SizeToContent.WidthAndHeight,
+                WindowStartupLocation = WindowStartupLocation.CenterOwner
+            };
             addPlayerWindow.Show();
         }
 
         private void ButtonAddPet_Click(object sender, RoutedEventArgs e)
         {
             UpdateAddPetButtonEnabledState();
-            AddPetWindow addPetWindow = new AddPetWindow(this);
-            addPetWindow.Owner = WindowMain;
-            addPetWindow.SizeToContent = SizeToContent.WidthAndHeight;
-            addPetWindow.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            AddPetWindow addPetWindow = new AddPetWindow(this)
+            {
+                Owner = WindowMain,
+                SizeToContent = SizeToContent.WidthAndHeight,
+                WindowStartupLocation = WindowStartupLocation.CenterOwner
+            };
             addPetWindow.Show();
         }
 

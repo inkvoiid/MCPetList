@@ -14,15 +14,24 @@
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
             <StackPanel>
-                <Image Width="100" Height="100" Source="https://static.wikia.nocookie.net/minecraft_gamepedia/images/d/d8/Allay_JE1_BE1.gif"/>
+                <Image Width="100" Height="100" Source="resources/pets/Allay.png"/>
                 <TextBlock VerticalAlignment="Bottom" Text="Allay" TextAlignment="Center"/>
             </StackPanel>
 
             <StackPanel>
-                <Image Width="100" Height="100" Source="https://static.wikia.nocookie.net/minecraft_gamepedia/images/d/d8/Red_Cat.png"/>
+                <Image Width="100" Height="100" Source="/resources/pets/AxolotlLeucistic.png"/>
+                <TextBlock VerticalAlignment="Bottom" Text="Axolotl" TextAlignment="Center"/>
+            </StackPanel>
+
+            <StackPanel>
+                <Image Width="100" Height="100" Source="/resources/pets/Camel.png"/>
+                <TextBlock VerticalAlignment="Bottom" Text="Camel" TextAlignment="Center"/>
+            </StackPanel>
+
+            <StackPanel>
+                <Image Width="100" Height="100" Source="/resources/pets/CatRed.png"/>
                 <TextBlock VerticalAlignment="Bottom" Text="Cat" TextAlignment="Center"/>
             </StackPanel>
         </ListView>
-
     </StackPanel>
 </Window>

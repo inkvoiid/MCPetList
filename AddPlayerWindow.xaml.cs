@@ -33,14 +33,14 @@ namespace MCPetList
             TextBoxSearch.Focus();
         }
 
-        private void ButtonSearch_Click(object sender, RoutedEventArgs e)
+        private async void ButtonSearch_Click(object sender, RoutedEventArgs e)
         {
-            ImageSkinDisplay.Source = GetMCSkin(TextBoxSearch.Text);
+            ImageSkinDisplay.Source = await GetMCSkin(TextBoxSearch.Text);
 
             UpdateAddPlayerEnabledState();
         }
 
-        private BitmapImage GetMCSkin(string username)
+        private async Task<BitmapImage> GetMCSkin(string username)
         {
             LabelNameplate.Visibility = Visibility.Visible;
             if (string.IsNullOrWhiteSpace(username))
@@ -52,8 +52,8 @@ namespace MCPetList
 
             try
             {
-                var userInfoFromAPI = MainWindow.sharedClient.GetStringAsync(username);
-                if (userInfoFromAPI.Result.Length == 0)
+                var userInfoFromAPI = await MainWindow.sharedClient.GetStringAsync(username);
+                if (userInfoFromAPI.Length == 0)
                 {
                     MessageBox.Show("User does not exist.");
                     LabelNameplate.Content = "MHF_Steve";
@@ -61,7 +61,7 @@ namespace MCPetList
                 }
                 else
                 {
-                    var jsonUserInfo = JsonDocument.Parse(userInfoFromAPI.Result);
+                    var jsonUserInfo = JsonDocument.Parse(userInfoFromAPI);
 
                     returnedUsername = jsonUserInfo.RootElement.TryGetProperty("name", out var nameElement)
                         ? nameElement.ToString()
@@ -111,6 +111,11 @@ namespace MCPetList
         {
             var textBox = sender as TextBox;
             textBox?.SelectAll();
+        }
+
+        private void ButtonCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

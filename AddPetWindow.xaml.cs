@@ -19,6 +19,7 @@ namespace MCPetList
     /// </summary>
     public partial class AddPetWindow : Window
     {
+        List<string> petTypes = new List<string> { "Allay", "Axolotl", "Camel", "Cat", "Dog", "Donkey", "Fox", "Horse", "Llama", "Mule", "Ocelot", "Parrot" };
         public AddPetWindow(MainWindow mWindow)
         {
             InitializeComponent();
