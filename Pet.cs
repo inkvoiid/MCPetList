@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MCPetList
 {
-    internal abstract class Pet
+    public abstract class Pet
     {
         public string Name { get; set; }
         public string Type { get; set; }
@@ -21,7 +21,7 @@ namespace MCPetList
 
     }
 
-    internal class Allay : Pet
+    public class Allay : Pet
     {
         public Allay(string name, string type, Player owner) : base(name, type, owner)
         {
@@ -31,7 +31,7 @@ namespace MCPetList
         }
     }
 
-    internal class Axolotl : Pet
+    public class Axolotl : Pet
     {
         public Axolotl(string name, string type, Player owner) : base(name, type, owner)
         {
@@ -41,7 +41,7 @@ namespace MCPetList
         }
     }
 
-    internal class Camel : Pet
+    public class Camel : Pet
     {
         public Camel(string name, Player owner) : base(name, "Camel", owner)
         {
@@ -50,7 +50,7 @@ namespace MCPetList
         }
     }
 
-    internal class Cat : Pet
+    public class Cat : Pet
     {
         public enum CollarColourEnum { White, LightGray, Gray, Black, Brown, Red, Orange, Yellow, Lime, Green, Cyan, LightBlue, Blue, Purple, Magenta, Pink }
         public bool IsBaby {get; set;}
@@ -65,7 +65,7 @@ namespace MCPetList
         }
     }
 
-        internal class Dog : Pet
+    public class Dog : Pet
     {
         public enum CollarColourEnum { White, LightGray, Gray, Black, Brown, Red, Orange, Yellow, Lime, Green, Cyan, LightBlue, Blue, Purple, Magenta, Pink }
         public bool IsBaby {get; set;}

@@ -27,7 +27,7 @@ namespace MCPetList
     /// </summary>
     public partial class MainWindow : Window
     {
-        public Dictionary<string,string> players = new Dictionary<string,string>();
+        public List<Player> players = new List<Player>();
         public static HttpClient sharedClient = new()
         {
             BaseAddress = new Uri("https://api.mojang.com/users/profiles/minecraft/"),
@@ -53,13 +53,13 @@ namespace MCPetList
             {
                 Image playerHead = new Image
                 {
-                    Source = player.Value == "" ? new BitmapImage(new Uri(@"resources\defaultavatar.png", UriKind.Relative)) : await GetAvatar(player.Key),
+                    Source = player.UUID == "" ? new BitmapImage(new Uri(@"resources\defaultavatar.png", UriKind.Relative)) : await GetAvatar(player.Username),
                     Height = 25
                 };
                 TextBlock headerText = new TextBlock
                 {
-                    Text = player.Key,
                     Foreground = new SolidColorBrush(Colors.White),
+                    Text = player.Username,
                     VerticalAlignment = VerticalAlignment.Center,
                     Margin = new Thickness(5)
                 };

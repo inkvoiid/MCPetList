@@ -89,13 +89,13 @@ namespace MCPetList
 
         private void ButtonAdd_Click(object sender, RoutedEventArgs e)
         {
-            if (mainWindow.players.ContainsKey(returnedUsername))
+            if (mainWindow.players.Any(p => p.Username == returnedUsername))
             {
                 MessageBox.Show("You have already added that player");
             }
             else
             {
-                mainWindow.players.Add(returnedUsername, returnedUUID);
+                mainWindow.players.Add(new Player(returnedUsername, returnedUUID));
                 mainWindow.GenerateExpanders();
                 mainWindow.UpdateAddPetButtonEnabledState();
                 this.Close();

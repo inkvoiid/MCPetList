@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace MCPetList
 {
-    internal class Player
+    public class Player
     {
         public string Username { get; set; }
         public string UUID { get; set; }
         public List<Pet> Pets { get; set; }
-        public Player(string uname) { }
+        public Player(string uname, string uuid) 
+        {
+            Username = uname;
+            UUID = uuid;
+            Pets = new List<Pet>();
+        }
     }
 }
