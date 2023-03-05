@@ -7,6 +7,7 @@ using System.Net.Http.Json;
 using System.Net.NetworkInformation;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -18,6 +19,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.VisualBasic;
+using Microsoft.Win32;
+using Newtonsoft.Json;
 using Path = System.IO.Path;
 
 namespace MCPetList
@@ -35,9 +38,7 @@ namespace MCPetList
 
         public MainWindow()
         {
-            InitializeComponent(); 
-            UpdateAddPetButtonEnabledState();
-
+            InitializeComponent();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -58,8 +59,8 @@ namespace MCPetList
                 };
                 TextBlock headerText = new TextBlock
                 {
-                    Foreground = new SolidColorBrush(Colors.White),
                     Text = player.Username,
+                    Style = this.FindResource("MCTextStyle") as Style,
                     VerticalAlignment = VerticalAlignment.Center,
                     Margin = new Thickness(5)
                 };
@@ -75,6 +76,8 @@ namespace MCPetList
                 };
                 
                 MainPanel.Children.Add(userExpander);
+
+                UpdateAddPetButtonEnabledState();
             }
         }
 

@@ -20,6 +20,7 @@ namespace MCPetList
     public partial class AddPetWindow : Window
     {
         List<string> petTypes = new List<string> { "Allay", "Axolotl", "Camel", "Cat", "Dog", "Donkey", "Fox", "Horse", "Llama", "Mule", "Ocelot", "Parrot" };
+        Color[] collarColours = new Color[] { Colors.White, Colors.LightGray, Colors.Gray, Colors.Black, Colors.Brown, Colors.Red, Colors.Orange, Colors.Yellow, Colors.Lime, Colors.Green, Colors.Cyan, Colors.LightBlue, Colors.Blue, Colors.Purple, Colors.Magenta, Colors.Pink };
         public AddPetWindow(MainWindow mWindow)
         {
             InitializeComponent();

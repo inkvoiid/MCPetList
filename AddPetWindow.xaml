@@ -7,12 +7,23 @@
         mc:Ignorable="d"
         Title="Add a Pet" ResizeMode="NoResize" Height="450" Width="800" Style="{StaticResource MCPetListStyle}">
     <StackPanel>
-        <ListView x:Name="PetSelectionList">
+        <ListView x:Name="PetSelectionList" Background="{x:Null}">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel></WrapPanel>
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
+            <ListView.Resources>
+                <Style TargetType="ListViewItem">
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="Green" />
+                            <Setter Property="BorderBrush" Value="DarkGreen" />
+                            <Setter Property="BorderThickness" Value="2" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ListView.Resources>
             <StackPanel>
                 <Image Width="100" Height="100" Source="resources/pets/Allay.png"/>
                 <TextBlock VerticalAlignment="Bottom" Text="Allay" TextAlignment="Center"/>
@@ -33,5 +44,52 @@
                 <TextBlock VerticalAlignment="Bottom" Text="Cat" TextAlignment="Center"/>
             </StackPanel>
         </ListView>
+        <Separator/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Margin="10,0" HorizontalAlignment="Center">
+                <Border BorderBrush="White" BorderThickness="10"  Width="150" Height="150">
+                    <Image Source="resources/pets/Cat.png" Margin="5" Stretch="UniformToFill"/>
+                </Border>
+                <Border BorderThickness="3" BorderBrush="DarkGreen">
+                    <Grid Background="#178C4A">
+                        <TextBlock Text="Friend" FontFamily="Minecraft Ten" FontSize="24" Style="{StaticResource MCButtonTextStyle}" Margin="0,0,0,5" TextAlignment="Center" />
+                    </Grid>
+                </Border>
+                <Separator/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Name:" VerticalAlignment="Center" Foreground="#3D3D3D"/>
+                    <TextBox Text="Friend" Width="200" VerticalAlignment="Center" Style="{StaticResource MCTextboxStyle}"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Is Baby:" VerticalAlignment="Center" Foreground="#3D3D3D"/>
+                    <CheckBox VerticalAlignment="Center" BorderThickness="2"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Collar Colour:" VerticalAlignment="Center" Foreground="#3D3D3D"/>
+                    <ComboBox x:Name="colorComboBox" 
+          Width="100" 
+          ItemsSource="{Binding collarColours}">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <Rectangle Width="20" 
+                       Height="20" 
+                       Margin="5" 
+                       Fill="{Binding}" 
+                       Stroke="{Binding Path=IsSelected, 
+                                         RelativeSource={RelativeSource AncestorType=ComboBoxItem}}"/>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
     </StackPanel>
 </Window>

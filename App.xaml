@@ -5,9 +5,10 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <Style x:Key="MCPetListStyle" TargetType="{x:Type Control}">
-            <Setter Property="FontSize" Value="17"/>
+            <Setter Property="FontSize" Value="18"/>
             <Setter Property="FontFamily" Value="resources/#Minecraft Seven" />
             <Setter Property="FontStyle" Value="Normal" />
+            <Setter Property="Background" Value="#C6C6C6" />
         </Style>
 
         <Style x:Key="MCButtonStyle" TargetType="{x:Type Button}">
@@ -15,7 +16,7 @@
             <Setter Property="Background" Value="#178C4A"/>
             <Setter Property="BorderBrush" Value="DarkGreen"/>
             <Setter Property="BorderThickness" Value="2"/>
-            <Setter Property="Margin" Value="2"/>
+            <Setter Property="Margin" Value="4"/>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Background" Value="#1ba277"/>
@@ -57,11 +58,6 @@
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="BorderThickness" Value="2"></Setter>
             <Setter Property="BorderBrush" Value="#3C392A"></Setter>
-            <Setter Property="Effect">
-                <Setter.Value>
-                    <DropShadowEffect ShadowDepth="2.5" BlurRadius="0" Color="White"/>
-                </Setter.Value>
-            </Setter>
         </Style>
     </Application.Resources>
 </Application>
