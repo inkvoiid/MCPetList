@@ -14,22 +14,21 @@
     <None Remove="resources\Minecraft Seven.otf" />
     <None Remove="resources\Minecraft Ten.otf" />
     <None Remove="resources\pets\Allay.png" />
-    <None Remove="resources\pets\AxolotlLeucistic.png" />
+    <None Remove="resources\pets\Axolotl.png" />
     <None Remove="resources\pets\Camel.png" />
-    <None Remove="resources\pets\CatRed.png" />
+    <None Remove="resources\pets\Cat.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Allay.png" />
     <Resource Include="resources\defaultavatar.png" />
     <Resource Include="resources\defaultskin.png" />
     <Resource Include="resources\GoghExtraBold.ttf" />
     <Resource Include="resources\Minecraft Seven.otf" />
     <Resource Include="resources\Minecraft Ten.otf" />
     <Resource Include="resources\pets\Allay.png" />
-    <Resource Include="resources\pets\AxolotlLeucistic.png" />
+    <Resource Include="resources\pets\Axolotl.png" />
     <Resource Include="resources\pets\Camel.png" />
-    <Resource Include="resources\pets\CatRed.png" />
+    <Resource Include="resources\pets\Cat.png" />
   </ItemGroup>
 
 </Project>
