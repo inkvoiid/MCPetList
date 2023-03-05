@@ -20,6 +20,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="resources\defaultavatar.png" />
     <Resource Include="resources\defaultskin.png" />
     <Resource Include="resources\GoghExtraBold.ttf" />
