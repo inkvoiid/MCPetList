@@ -19,7 +19,7 @@
             </StackPanel>
 
             <StackPanel>
-                <Image Width="100" Height="100" Source="/resources/pets/AxolotlLeucistic.png"/>
+                <Image Width="100" Height="100" Source="/resources/pets/Axolotl.png"/>
                 <TextBlock VerticalAlignment="Bottom" Text="Axolotl" TextAlignment="Center"/>
             </StackPanel>
 
@@ -29,7 +29,7 @@
             </StackPanel>
 
             <StackPanel>
-                <Image Width="100" Height="100" Source="/resources/pets/CatRed.png"/>
+                <Image Width="100" Height="100" Source="/resources/pets/Cat.png"/>
                 <TextBlock VerticalAlignment="Bottom" Text="Cat" TextAlignment="Center"/>
             </StackPanel>
         </ListView>
