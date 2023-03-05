@@ -19,9 +19,15 @@
                     <Setter Property="VerticalAlignment" Value="Center" />
                 </Style>
             </ToolBar.Resources>
-            <Button x:Name="ButtonSave" ToolTip="Save">
+            <Button x:Name="ButtonOpen" ToolTip="Open" Style="{StaticResource MCButtonStyle}" Click="ButtonOpen_Click">
                 <Button.Content>
-                    <TextBlock Text="💾 Save" Style="{StaticResource MCTextStyle}"/>
+                    <TextBlock Text="📂 Open" Style="{StaticResource MCButtonTextStyle}"/>
+                </Button.Content>
+            </Button>
+            
+            <Button x:Name="ButtonSave" ToolTip="Save" Style="{StaticResource MCButtonStyle}" Click="ButtonSave_Click">
+                <Button.Content>
+                    <TextBlock Text="💾 Save" Style="{StaticResource MCButtonTextStyle}"/>
                 </Button.Content>
             </Button>
 

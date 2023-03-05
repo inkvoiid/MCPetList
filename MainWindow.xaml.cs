@@ -157,5 +157,41 @@ namespace MCPetList
             GenerateExpanders();
             UpdateAddPetButtonEnabledState();
         }
+
+        private void ButtonSave_Click(object sender, RoutedEventArgs e)
+        {
+            SavePlayersToJson(players);
+        }
+
+        private void SavePlayersToJson(List<Player> playersToSave)
+        {
+            var saveJsonWindow = new SaveFileDialog { Filter= "JSON Files (*.json)|*.json" };
+            if (saveJsonWindow.ShowDialog() == true)
+            {
+                var jsonString = System.Text.Json.JsonSerializer.Serialize(playersToSave, new JsonSerializerOptions { WriteIndented = true});
+                File.WriteAllText(saveJsonWindow.FileName, jsonString);
+            }
+        }
+
+        private void ButtonOpen_Click(object sender, RoutedEventArgs e)
+        {
+            var openJsonWindow = new OpenFileDialog { Filter = "JSON Files (*.json)|*.json" };
+            if (openJsonWindow.ShowDialog() == true)
+            {
+                string jsonFromFile = File.ReadAllText(openJsonWindow.FileName);
+                if(jsonFromFile != null)
+                {
+                    players = JsonConvert.DeserializeObject<List<Player>>(jsonFromFile);
+                    GenerateExpanders();
+                }
+                else
+                {
+                    MessageBox.Show("Couldn't open that file.");
+                }
+
+            }
+
+
+        }
     }
 }
