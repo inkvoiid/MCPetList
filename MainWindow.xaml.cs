@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
@@ -43,7 +44,15 @@ namespace MCPetList
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //Img.Source = await GetAvatar(Interaction.InputBox("Enter your username", "Enter username", "jeb_"));
+            if (ConfigurationManager.AppSettings["LastOpenedFile"] != "")
+            {
+                string jsonFromFile = File.ReadAllText(ConfigurationManager.AppSettings["LastOpenedFile"]);
+                if (jsonFromFile != null)
+                {
+                    players = JsonConvert.DeserializeObject<List<Player>>(jsonFromFile);
+                    GenerateExpanders();
+                }
+            }
             GenerateExpanders();
         }
 
@@ -181,6 +190,11 @@ namespace MCPetList
             var openJsonWindow = new OpenFileDialog { Filter = "JSON Files (*.json)|*.json" };
             if (openJsonWindow.ShowDialog() == true)
             {
+                Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                config.AppSettings.Settings["LastOpenedFile"].Value = openJsonWindow.FileName;
+                config.Save(ConfigurationSaveMode.Modified);
+                ConfigurationManager.RefreshSection("appSettings");
+
                 string jsonFromFile = File.ReadAllText(openJsonWindow.FileName);
                 if(jsonFromFile != null)
                 {
