@@ -56,7 +56,7 @@
                 </Border>
                 <Border BorderThickness="3" BorderBrush="DarkGreen">
                     <Grid Background="#178C4A">
-                        <TextBlock Text="Friend" FontFamily="Minecraft Ten" FontSize="24" Style="{StaticResource MCButtonTextStyle}" Margin="0,0,0,5" TextAlignment="Center" />
+                        <TextBlock Text="Friend" FontFamily="resources/#Minecraft Ten" FontSize="24" Style="{StaticResource MCButtonTextStyle}" Margin="0,0,0,5" TextAlignment="Center" />
                     </Grid>
                 </Border>
                 <Separator/>
@@ -75,16 +75,17 @@
                 <StackPanel Orientation="Horizontal">
                     <Label Content="Collar Colour:" VerticalAlignment="Center" Foreground="#3D3D3D"/>
                     <ComboBox x:Name="colorComboBox" 
-          Width="100" 
-          ItemsSource="{Binding collarColours}">
+          Width="45" 
+          ItemsSource="{Binding CollarColours}" SelectedItem="{Binding SelectedColour}">
                         <ComboBox.ItemTemplate>
                             <DataTemplate>
-                                <Rectangle Width="20" 
-                       Height="20" 
-                       Margin="5" 
-                       Fill="{Binding}" 
-                       Stroke="{Binding Path=IsSelected, 
-                                         RelativeSource={RelativeSource AncestorType=ComboBoxItem}}"/>
+                                <Grid>
+                                    <Rectangle Width="20" Height="20" Margin="5">
+                                        <Rectangle.Fill>
+                                            <SolidColorBrush Color="{Binding}" />
+                                        </Rectangle.Fill>
+                                    </Rectangle>
+                                </Grid>
                             </DataTemplate>
                         </ComboBox.ItemTemplate>
                     </ComboBox>

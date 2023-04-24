@@ -21,31 +21,43 @@
             </ToolBar.Resources>
             <Button x:Name="ButtonOpen" ToolTip="Open" Style="{StaticResource MCButtonStyle}" Click="ButtonOpen_Click">
                 <Button.Content>
-                    <TextBlock Text="📂 Open" Style="{StaticResource MCButtonTextStyle}"/>
+                    <TextBlock Text="📂 Open" FontSize="14" Style="{StaticResource MCButtonTextStyle}"/>
                 </Button.Content>
             </Button>
             
             <Button x:Name="ButtonSave" ToolTip="Save" Style="{StaticResource MCButtonStyle}" Click="ButtonSave_Click">
                 <Button.Content>
-                    <TextBlock Text="💾 Save" Style="{StaticResource MCButtonTextStyle}"/>
+                    <TextBlock Text="💾 Save" FontSize="14" Style="{StaticResource MCButtonTextStyle}"/>
                 </Button.Content>
             </Button>
 
-            <Button x:Name="ButtonReload" ToolTip="Reload" Click="ButtonReload_Click" Style="{StaticResource MCButtonStyle}">
+            <Button x:Name="ButtonSaveAs" ToolTip="Save As" Style="{StaticResource MCButtonStyle}" Click="ButtonSaveAs_Click">
                 <Button.Content>
-                    <TextBlock Text="🔄 Reload" Style="{StaticResource MCButtonTextStyle}"/>
+                    <TextBlock Text="💾 Save As" FontSize="14" Style="{StaticResource MCButtonTextStyle}"/>
+                </Button.Content>
+            </Button>
+
+            <Button x:Name="ButtonReload" ToolTip="Reload List" Click="ButtonReload_Click" Style="{StaticResource MCButtonStyle}">
+                <Button.Content>
+                    <TextBlock Text="🔄 Reload List" FontSize="14" Style="{StaticResource MCButtonTextStyle}"/>
+                </Button.Content>
+            </Button>
+
+            <Button x:Name="ButtonRefreshPlayerData" ToolTip="Refresh Player Data" Click="ButtonRefreshPlayerData_Click" Style="{StaticResource MCButtonStyle}">
+                <Button.Content>
+                    <TextBlock Text="🔄 Refresh Player Data" FontSize="14" Style="{StaticResource MCButtonTextStyle}"/>
                 </Button.Content>
             </Button>
 
             <Button x:Name="ButtonAddPlayer" ToolTip="Add Player" Click="ButtonAddPlayer_Click" Style="{StaticResource MCButtonStyle}">
                 <Button.Content>
-                    <TextBlock Text="➕ Add Player" Style="{StaticResource MCButtonTextStyle}"/>
+                    <TextBlock Text="➕ Add Player" FontSize="14" Style="{StaticResource MCButtonTextStyle}"/>
                 </Button.Content>
             </Button>
 
-            <Button x:Name="ButtonAddPet" ToolTip="Add Pet" Click="ButtonAddPet_Click" Style="{StaticResource MCButtonStyle}" IsEnabled="False">
+            <Button x:Name="ButtonAddPet" ToolTip="Add Pet" FontSize="14" Click="ButtonAddPet_Click" Style="{StaticResource MCButtonStyle}" IsEnabled="False">
                 <Button.Content>
-                    <TextBlock Text="➕ Add Pet" Style="{StaticResource MCButtonTextStyle}"/>
+                    <TextBlock Text="➕ Add Pet" FontSize="14" Style="{StaticResource MCButtonTextStyle}"/>
                 </Button.Content>
             </Button>
         </ToolBar>

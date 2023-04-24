@@ -6,13 +6,13 @@
     <Application.Resources>
         <Style x:Key="MCPetListStyle" TargetType="{x:Type Control}">
             <Setter Property="FontSize" Value="18"/>
-            <Setter Property="FontFamily" Value="resources/#Minecraft Seven" />
+            <Setter Property="FontFamily" Value="resources/#Simply Sans" />
             <Setter Property="FontStyle" Value="Normal" />
             <Setter Property="Background" Value="#C6C6C6" />
         </Style>
 
         <Style x:Key="MCButtonStyle" TargetType="{x:Type Button}">
-            <Setter Property="FontFamily" Value="resources/#Minecraft Ten" />
+            <Setter Property="FontFamily" Value="resources/#Simply Sans" />
             <Setter Property="Background" Value="#178C4A"/>
             <Setter Property="BorderBrush" Value="DarkGreen"/>
             <Setter Property="BorderThickness" Value="2"/>
@@ -26,7 +26,6 @@
         </Style>
 
         <Style x:Key="MCButtonTextStyle" TargetType="TextBlock">
-            <Setter Property="RenderOptions.BitmapScalingMode" Value="NearestNeighbor"/>
             <Setter Property="Effect">
                 <Setter.Value>
                     <DropShadowEffect ShadowDepth="2.5" BlurRadius="0" Color="Green"/>
@@ -40,7 +39,6 @@
         </Style>
 
         <Style x:Key="MCTextStyle" TargetType="{x:Type TextBlock}">
-            <Setter Property="RenderOptions.BitmapScalingMode" Value="NearestNeighbor"/>
             <Setter Property="Effect">
                 <Setter.Value>
                     <DropShadowEffect ShadowDepth="2.5" BlurRadius="0" Color="#3E3E3E"/>

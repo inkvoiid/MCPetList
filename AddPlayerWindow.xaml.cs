@@ -52,15 +52,23 @@ namespace MCPetList
 
             try
             {
-                var userInfoFromAPI = await MainWindow.sharedClient.GetStringAsync(username);
+                /* Sending a GET request to an API endpoint with the provided `username` parameter and
+                asynchronously retrieving the response as a string. The response is then parsed as a
+                JSON document to extract the user information. */
+                var userInfoFromAPI = await App.mojangAPI.GetStringAsync(username);
+
+                /* This code block is handling the retrieval of Minecraft skin information for a given
+                username. It first checks if the API response is empty, indicating that the user
+                does not exist, and displays an error message if so. If the response is not empty,
+                it parses the response as a JSON document and extracts the username and UUID
+                information. It then updates the LabelNameplate content with the retrieved username
+                and returns a BitmapImage of the Minecraft skin for the given UUID. */
                 if (userInfoFromAPI.Length == 0)
                 {
                     MessageBox.Show("User does not exist.");
                     LabelNameplate.Content = "MHF_Steve";
                     return new BitmapImage(new Uri(@"resources\defaultskin.png", UriKind.Relative));
                 }
-                else
-                {
                     var jsonUserInfo = JsonDocument.Parse(userInfoFromAPI);
 
                     returnedUsername = jsonUserInfo.RootElement.TryGetProperty("name", out var nameElement)
@@ -74,8 +82,12 @@ namespace MCPetList
                     LabelNameplate.Content = returnedUsername;
                     return new BitmapImage(new Uri("https://crafatar.com/renders/body/" + returnedUUID +
                                                    "?default=MHF_Steve/MHF_Alex&overlay"));
-                }
             }
+            /* This code block is handling an exception that may occur when attempting to retrieve
+            Minecraft skin information for a given username. If an exception occurs, the code sets
+            the `returnedUsername` variable to the provided `username`, sets the `returnedUUID`
+            variable to an empty string, updates the `LabelNameplate` content with the
+            `returnedUsername`, and returns a default Minecraft skin image as a `BitmapImage`. */
             catch (Exception)
             {
                 returnedUsername = username;

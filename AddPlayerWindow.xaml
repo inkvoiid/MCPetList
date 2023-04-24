@@ -24,12 +24,12 @@
 
         <StackPanel VerticalAlignment="Bottom" Background="#FFECECEC">
             <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
-                <Button x:Name="ButtonCancel" Margin="5" Width="75" IsCancel="True" Style="{StaticResource MCButtonStyle}" Click="ButtonCancel_Click" >
+                <Button x:Name="ButtonCancel" Margin="5" Width="95" IsCancel="True" Style="{StaticResource MCButtonStyle}" Click="ButtonCancel_Click" >
                     <Button.Content>
                         <TextBlock Text="Cancel" Style="{StaticResource MCButtonTextStyle}"></TextBlock>
                     </Button.Content>
                 </Button>
-                <Button x:Name="ButtonAdd" Margin="5" Width="75" Click="ButtonAdd_Click" Style="{StaticResource MCButtonStyle}">
+                <Button x:Name="ButtonAdd" Margin="5" Width="95" Click="ButtonAdd_Click" Style="{StaticResource MCButtonStyle}">
                     <Button.Content>
                         <TextBlock Text="Add" Style="{StaticResource MCButtonTextStyle}"/>
                     </Button.Content>

@@ -17,6 +17,8 @@
     <None Remove="resources\pets\Axolotl.png" />
     <None Remove="resources\pets\Camel.png" />
     <None Remove="resources\pets\Cat.png" />
+    <None Remove="resources\SimplySans-Bold.ttf" />
+    <None Remove="resources\THEBOLDFONT.ttf" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,6 +36,8 @@
     <Resource Include="resources\pets\Axolotl.png" />
     <Resource Include="resources\pets\Camel.png" />
     <Resource Include="resources\pets\Cat.png" />
+    <Resource Include="resources\SimplySans-Bold.ttf" />
+    <Resource Include="resources\THEBOLDFONT.ttf" />
   </ItemGroup>
 
 </Project>
